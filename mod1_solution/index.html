@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="LunchCheck" lang="en">
+<head>
+    <title>Assignment1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <style>
+        .message { font-size: 1.3em; font-weight: bold; }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="app.js"></script>
+
+</head>
+<body>
+<div class="container">
+<h1>Let us find out how much is too much for you</h1>
+<div class="form-group" ng-controller="LunchCheckController">
+
+    Please provide what you want to eat comma separated ?
+    <input id="lunch-menu" placeholder="list comma separated dishes you usually have for lunch"
+           class="form-control"
+    type="text" ng-model="foodList"/>
+    <div class="form-group">
+    <button class="btn btn-default" ng-click="findFoodLimit()">Check if Too Much</button>
+    </div>
+    <div class="message">
+        {{foodMessage}}
+    </div>
+
+</div>
+</div>
+</body>
+</html>
